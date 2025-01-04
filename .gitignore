@@ -1,0 +1,7 @@
+#Ignore sensitive files
+.env
+pyvenv.cfg
+Hey-Fred_en_raspberry-pi_v3_0_0.ppn
+bin/
+lib/
+lib64
