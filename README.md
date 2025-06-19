@@ -12,15 +12,15 @@ including detailed planning, 3D modeling, and system debugging.
 
 ## Design Overview
 ### Mechanical Design
-To implement the automatic drawer opening and closing functionality, I used a 3D-printed rack and pinion mechanism driven 
-by stepper motors for their precise control and strength. To save time, I altered an existing online model of a rack, pinion, and servo mount in TinkerCAD and 
+To implement the automatic drawer functionality, I used a custom-built wooden frame with two drawers driven by a 3D-printed rack and pinion mechanism 
+using stepper motors for their precise control and strength. To save time, I altered an existing online model of a rack, pinion, and servo mount in TinkerCAD and 
 Bambu Studio to fit my project needs, including a D-cut shaft of the stepper motor, custom rack lengths, and a 
 specific mount size. I also decided to use ball-bearing drawer slides (side-mounted) for easier drawer movement. As for the
-locking mechanism, I used a servo and a 3D-printed holder, which I also modeled. Additional features I added include an LCD module to print critical commands and an NFC tag that my iPhone reads to send a command to the Raspberry 
+locking mechanism, I used a servo and a 3D-printed holder, which I also modeled. Additional features I added include an LCD module to print critical communication commands and an NFC tag that my iPhone reads to send a command to the Raspberry 
 Pi over SSH to unlock the bottom drawer. 
 ### System Architecture 
 The Raspberry Pi manages the high-level logic, including wake-word detection using Picovoice, speech recognition with Google's Speech Recognition library, NFC command processing, and communication with the Arduino.
-The Arduino, on the other hand, is used to control the hardware and execute the commands sent by the Pi, interfacing directly with stepper motors, a servo motor, the LCD display, 
+The Arduino is used to control the hardware and execute the commands sent by the Pi, interfacing directly with stepper motors, a servo motor, and the LCD display.
 
 
 ## Setup Requirements
@@ -48,3 +48,4 @@ The Arduino, on the other hand, is used to control the hardware and execute the 
 * Advanced voice recognition: Implement NLP techniques to improve understanding of natural voice commands
 * Voice feedback: System responds to commands with audible feedback
 * Additional access: Develop a companion mobile app for alternative access
+* Ultrasonic distance: Use physical proximity to open drawers
